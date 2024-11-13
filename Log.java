@@ -1,14 +1,38 @@
 public class Log {
-   public int arrive;
-   public int park;
-   public int leave;
+   private int gate;
+   private int name;
+   private int arrive;
+   private int leave;
 
-   public Log(int arrive, int park, int leave) {
+
+   public Log(int gate, int name, int arrive, int leave) {
+      this.gate = gate;
+      this.name = name;
       this.arrive = arrive;
-      this.park = park;
       this.leave = leave;
    }
-   
+   public Log() {
+      this.gate = 0;
+      this.name = 0;
+      this.arrive = 0;
+      this.leave = 0;
+   }
+
+   public int getGate() {
+      return this.gate;
+   }
+
+   public void setGate(int gate) {
+      this.gate = gate;
+   }
+
+   public int getName() {
+      return this.name;
+   }
+
+   public void setName(int name) {
+      this.name = name;
+   }
 
    public int getArrive() {
       return this.arrive;
@@ -18,14 +42,6 @@ public class Log {
       this.arrive = arrive;
    }
 
-   public int getPark() {
-      return this.park;
-   }
-
-   public void setPark(int park) {
-      this.park = park;
-   }
-
    public int getLeave() {
       return this.leave;
    }
@@ -33,5 +49,6 @@ public class Log {
    public void setLeave(int leave) {
       this.leave = leave;
    }
+
    
 }

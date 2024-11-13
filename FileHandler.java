@@ -12,7 +12,7 @@ public class FileHandler {
       BufferedReader br = new BufferedReader(new FileReader(fileName));
       String line;
       while((line = br.readLine()) != null) {
-         int a = -1, b = -1, c = -1;
+         int a = -1, b = -1, c = -1, d = -1;
          line = line + ",";
          int i, j;
          for(i = 0, j = 0; i < format.length(); i++) {
@@ -31,8 +31,10 @@ public class FileHandler {
                   a = x;
                } else if(b == -1) {
                   b = x;
-               } else {
+               } else if(c == -1) {
                   c = x;
+               } else {
+                  d = x;
                }
 
             } else {
@@ -46,7 +48,7 @@ public class FileHandler {
             br.close();
             throw new Exception("Incorrect format");
          }
-         log.add(new Log(a, b, c));
+         log.add(new Log(a, b, c, d));
       }
 
       br.close();

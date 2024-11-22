@@ -1,27 +1,30 @@
-// import java.util.concurrent.Semaphore;
-// import java.util.concurrent.atomic.AtomicInteger;
+public class Park {
+   private CustomSemaphore sem;
+   private int simulationTime;
 
-// public class Park {
-//    private Semaphore spots;
-//    private AtomicInteger theoreticalTime;
+   public Park(int spots) {
+      this.sem = new CustomSemaphore(spots);
+      simulationTime = 0;
+   }
 
+   public CustomSemaphore getSem() {
+      return this.sem;
+   }
 
-//    public Park() {
-//       spots = new Semaphore(4);
-//       theoreticalTime = new AtomicInteger(0);
-//    }
+   public void setSem(CustomSemaphore sem) {
+      this.sem = sem;
+   }
 
+   public int getSimulationTime() {
+      return this.simulationTime;
+   }
 
-//    public Semaphore getSpots() {
-//       return this.spots;
-//    }
+   public void setSimulationTime(int simulationTime) {
+      this.simulationTime = simulationTime;
+   }
 
-//    public AtomicInteger getTheoreticalTime() {
-//       return this.theoreticalTime;
-//    }
+   public void increment_time() {
+      simulationTime++;
+   }
 
-//    public void incrementSimulationTime() {
-//       theoreticalTime.incrementAndGet();
-//    }
-   
-// }
+}

@@ -2,20 +2,20 @@ public class Log {
    private int gate;
    private int name;
    private int arrive;
-   private int parking;
+   private int leave;
 
-   public Log(int gate, int name, int arrive, int parking) {
+
+   public Log(int gate, int name, int arrive, int leave) {
       this.gate = gate;
       this.name = name;
       this.arrive = arrive;
-      this.parking = parking;
+      this.leave = leave;
    }
-
    public Log() {
       this.gate = 0;
       this.name = 0;
       this.arrive = 0;
-      this.parking = 0;
+      this.leave = 0;
    }
 
    public int getGate() {
@@ -42,12 +42,13 @@ public class Log {
       this.arrive = arrive;
    }
 
-   public int getparking() {
-      return this.parking;
+   public int getLeave() {
+      return this.leave;
    }
 
-   public void setparking(int parking) {
-      this.parking = parking;
+   public void setLeave(int leave) {
+      this.leave = leave;
    }
 
+   
 }

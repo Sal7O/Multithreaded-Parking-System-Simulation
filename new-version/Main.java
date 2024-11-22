@@ -8,11 +8,11 @@ public class Main {
          ArrayList<Car> cars = new ArrayList<>();
          Park park = new Park(4);
          Timer timer = new Timer(park);
+         timer.start();
 
          for (int i = 0; i < logs.size(); i++) {
             cars.add(new Car(logs.get(i), park));
          }
-         timer.start();
          for (int i = 0; i < cars.size(); i++) {
             cars.get(i).start();
          }

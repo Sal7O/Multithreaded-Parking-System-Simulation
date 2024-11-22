@@ -16,7 +16,7 @@ public class CustomSemaphore {
                "Car " +
                      car.getLog().getName() +
                      " from Gate " +
-                     car.getLog().getName() +
+                     car.getLog().getGate() +
                      " waiting for a spot.");
          wait();
       }
@@ -26,16 +26,16 @@ public class CustomSemaphore {
                "Car " +
                      car.getLog().getName() +
                      " parked after waiting for " +
-                     (park.getSimulationTime() - car.getLog().getArrive()) +
+                     (park.getSimulationTime() - car.getLog().getArrive() + 1) +
                      " units of time. (Parking Status: " +
-                     (permits) +
+                     (4-permits) +
                      " spots occupied)");
       } else {
          System.out.println(
                "Car " +
                      car.getLog().getName() +
                      " parked. (Parking Status: " +
-                     (permits) +
+                     (4-permits) +
                      " spots occupied)");
       }
 
@@ -51,7 +51,7 @@ public class CustomSemaphore {
                   " left after " +
                   car.getLog().getparking() +
                   " units of time. (Parking Status: " +
-                  (permits) +
+                  (4-permits) +
                   " spots occupied)");
       notify();
    }

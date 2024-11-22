@@ -1,16 +1,16 @@
 public class Timer extends Thread{
-   Park park;
+   CustomSemaphore park;
 
-   public Timer(Park park) {
+   public Timer(CustomSemaphore park) {
       this.park = park;
       setDaemon(true);
    }
 
-   public Park getPark() {
+   public CustomSemaphore getPark() {
       return this.park;
    }
 
-   public void setPark(Park park) {
+   public void setPark(CustomSemaphore park) {
       this.park = park;
    }
 
@@ -18,7 +18,8 @@ public class Timer extends Thread{
    public void run() {
       while(true) {
          try {
-            Thread.sleep(3000);
+            Main.checkArrive();
+            Thread.sleep(1000);
             park.incrementSimulationTime();
          } catch(Exception e) {
             System.out.println(e.getMessage());
